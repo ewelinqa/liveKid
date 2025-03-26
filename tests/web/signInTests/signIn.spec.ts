@@ -28,7 +28,7 @@ test('Sign in', { tag: '@signIn' }, async ({ page }) => {
   const signInPage = new SignInPage(pageSignIn);
   await signInPage.userSignIn();
 
-  const userProfilePage = new UserProfilePage(page);
+  const userProfilePage = new UserProfilePage(pageSignIn);
 
   expect(await userProfilePage.title()).toBe(PageTitles.BASIC_TITLE);
   expect(userProfilePage.joinAsParentButtonIsVisible).toBeTruthy();
