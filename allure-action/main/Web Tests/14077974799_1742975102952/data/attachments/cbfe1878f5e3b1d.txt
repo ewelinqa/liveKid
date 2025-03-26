@@ -1,0 +1,71 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Sign in
+- Location: /home/runner/work/liveKid/liveKid/tests/web/signInTests/signIn.spec.ts:15:5
+
+# Error details
+
+```
+Error: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /home/runner/.cache/ms-playwright/webkit-2140/pw_run.sh --inspector-pipe --headless --no-startup-window
+<launched> pid=5437
+[pid=5437][err] /home/runner/.cache/ms-playwright/webkit-2140/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libwoff2dec.so.1.0.2: cannot open shared object file: No such file or directory
+Call log:
+  - <launching> /home/runner/.cache/ms-playwright/webkit-2140/pw_run.sh --inspector-pipe --headless --no-startup-window
+  - <launched> pid=5437
+  - [pid=5437][err] /home/runner/.cache/ms-playwright/webkit-2140/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libwoff2dec.so.1.0.2: cannot open shared object file: No such file or directory
+
+```
+
+# Test source
+
+```ts
+   1 | import { PageTitles } from '../../../src/enums/titles.enums';
+   2 | import { testUser1 } from '../../../src/test-data/user.data';
+   3 | import { HeaderComponent } from '../../../src/webui/components/header.component';
+   4 | import { BasePage } from '../../../src/webui/pages/base.page';
+   5 | import { SignInPage } from '../../../src/webui/pages/signIn.page';
+   6 | import { UserProfilePage } from '../../../src/webui/pages/userProfile.page';
+   7 | import { expect, test } from '@playwright/test';
+   8 | import * as allure from 'allure-js-commons';
+   9 |
+  10 | test.beforeEach(async ({ page }) => {
+  11 |   const basePage = new BasePage(page);
+  12 |   await basePage.goTo();
+  13 | });
+  14 |
+> 15 | test('Sign in', { tag: '@signIn' }, async ({ page }) => {
+     |     ^ Error: browserType.launch: Target page, context or browser has been closed
+  16 |   await allure.feature('User Authentication');
+  17 |   await allure.story('Sign In process');
+  18 |   await allure.severity(allure.Severity.BLOCKER);
+  19 |   await allure.description('This test verifies the sign-in process and checks if the user lands on the profile page.');
+  20 |
+  21 |   const headerComponent = new HeaderComponent(page);
+  22 |
+  23 |   const [pageSignIn] = await Promise.all([
+  24 |     page.waitForEvent('popup'),
+  25 |     headerComponent.signInLink.click(),
+  26 |   ]);
+  27 |
+  28 |   const signInPage = new SignInPage(pageSignIn);
+  29 |   await signInPage.userSignIn();
+  30 |
+  31 |   const userProfilePage = new UserProfilePage(pageSignIn);
+  32 |
+  33 |   expect(await userProfilePage.title()).toBe(PageTitles.BASIC_TITLE);
+  34 |   expect(userProfilePage.joinAsParentButtonIsVisible).toBeTruthy();
+  35 |
+  36 |   const screenshot = await pageSignIn.screenshot({ path: 'screenshots/signin.png', fullPage: true });
+  37 |   allure.attachment('SignIn Screenshot', screenshot, 'image/png');
+  38 | });
+  39 |
+```

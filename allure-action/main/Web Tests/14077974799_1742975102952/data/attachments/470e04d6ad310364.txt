@@ -1,0 +1,271 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Sign in
+- Location: /home/runner/work/liveKid/liveKid/tests/web/signInTests/signIn.spec.ts:15:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "Application for kindergartens and nurseries - LiveKid"
+Received: "Sign in | LiveKid"
+    at /home/runner/work/liveKid/liveKid/tests/web/signInTests/signIn.spec.ts:33:41
+```
+
+# Page snapshot
+
+```yaml
+- heading "Cookies" [level=1]
+- paragraph:
+  - text: We adapt the content to your individual needs using cookies. You can change the cookies using the settings of your web browser. By using our site without changing these settings, you accept their use.
+  - link "Cookie Policy"
+- button "Customize"
+- button "I Accept"
+- banner:
+  - link "Logo LiveKid":
+    - img "Logo LiveKid"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Pricing"
+      - listitem:
+        - link "Contact"
+  - link "Sign in"
+  - link "Create free account"
+  - link "EN"
+  - list:
+    - listitem:
+      - link "CA"
+    - listitem:
+      - link "CH"
+    - listitem:
+      - link "DE"
+    - listitem:
+      - link "ES"
+    - listitem:
+      - link "MX"
+    - listitem:
+      - link "PL"
+    - listitem:
+      - link "UK"
+- main:
+  - heading "The best application for kindergartens and nurseries" [level=1]
+  - paragraph: The most effective system for pre-schools and nurseries in the EU. Communication with parents, settlements, documentation. All in one place!
+  - link "Watch explainer"
+  - link "Start free trial"
+  - text: Test without any obligation!
+  - img "Application for kindergartens and nurseries"
+  - img "RODO"
+  - heading "GDPR compliant" [level=3]
+  - paragraph: Highest security standards and GDPR compliance.
+  - img "Opiekun"
+  - heading "Dedicated account manager" [level=3]
+  - paragraph: We provide you with the support of a personal account manager who will always be available on call.
+  - img "Opinie"
+  - heading "Proven quality" [level=3]
+  - paragraph: 4.8 stars from more than 2,000 users on Google Play.
+  - img "Użytkownicy"
+  - heading "User trust" [level=3]
+  - paragraph: LiveKid is trusted by more than 300,000 users from nearly 3,000 establishments worldwide.
+  - heading "Your mobile command center" [level=2]
+  - text: With these features you will gain order, peace of mind and plenty of time.
+  - img
+  - text: Settlements
+  - img
+  - text: Communication
+  - img
+  - text: Intelligent Assistant
+  - img
+  - text: Electronic journal
+  - img
+  - text: Reporting
+  - img
+  - text: Staff management
+  - img "Payments - Mobile app"
+  - heading "Your finances under control" [level=3]
+  - paragraph: Through the application you conveniently issue bills and invoices. The system automatically generates the billing for the period, and the parent can see the individual components of the bill. Thanks to the application you can also calculate interest. The customer knows what he pays for, and you do not worry about liquidity!
+  - img
+  - heading "Mobile payments" [level=4]
+  - paragraph: One your click and your parent has an account in the app. One click of the parent and the money is in your account.
+  - img
+  - heading "Invoicing" [level=4]
+  - paragraph: In the system, you can generate and send invoices to individuals or automatically to everyone.
+  - paragraph: One system, many options
+  - paragraph: Become one of thousands of satisfied users and see what benefits our application will give you.
+  - link "Start free trial"
+  - heading "Test it for free!" [level=2]
+  - paragraph: You can create a test account in three easy steps.
+  - link "Start testing"
+  - img "Załóż konto w 15 sekund"
+  - text: 15 s
+  - paragraph: Create your free account. Click the test button.
+  - img "Uzupełnij dane w 5 minut"
+  - text: 5 min
+  - paragraph: Fill in your data. No payment required.
+  - img "Aktywuj konto testowe w 30 minut"
+  - text: 30 min
+  - paragraph: Test for free. Your test account will be active for 3 days!
+  - link "Start free trial"
+  - text: Test without any obligation!
+  - heading "Directors about LiveKid" [level=2]
+  - list:
+    - listitem:
+      - img "Women avatar"
+      - text: Justine Nursery "Peas"
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „We, before LiveKid, used to make an 'application on a piece of paper'. And that was just a time-consuming problem! Moving this to the right place - i.e. LiveKid - is a completely different level of work organisation.”
+      - img
+      - text: 30 children in facility
+    - listitem:
+      - img "Avatar Anna"
+      - text: Anna Bonjour Bebe
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „At LiveKid it's a unique relationship - customer service that we know by name, a dedicated person for the site, a specific person we can always contact - that's fantastic for me and the girls. We don't know something? One phone call and you know everything. There's also always someone to help 'click through' if there's a problem.”
+      - img
+      - text: 2 child care facilities
+    - listitem:
+      - img "Women avatar"
+      - text: Margaret Nursery and Kindergarten "Brzdące na łące"
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „I like this app simply! It is my management centre. It gives me an overview of what is going on in the facility, even when I can't be there in person. So I have a greater sense of control over what is happening. And parents feel that we are modern, which is a big image plus.”
+      - img
+      - text: 44 children in facility
+    - listitem:
+      - text: Agnes Sports Non-public Kindergarten
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „There was no need to see if there were other options. After the first month, I could see that with the app, billing would take me 2-3 minutes. At that point I had no doubt that LiveKid had become my must have as a preschool director.”
+      - img
+      - text: 117 children in facility
+    - listitem:
+      - img "Women avatar"
+      - text: Anna Non-public Kindergarten "Sarenka"
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „I can't imagine a situation where I would have to go back to the forms of facility management before LiveKid! What I appreciate most about the app is the contact and speed of information, the single channel messaging to parents and the accounts.”
+      - img
+      - text: 40 children in facility
+    - listitem:
+      - img "Women avatar"
+      - text: Caroline Integration kindergarten "Pony Land"
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „I had this fear in my mind - how will I get two hundred children into the system? How much time and effort will it take! Meanwhile, after one day everything was off the table. My tutor at LiveKid explained everything I needed to know, and it was possible to act practically straight away.”
+      - img
+      - text: 198 children in facility
+    - listitem:
+      - text: Iwona Owner of the non-public kindergarten and nursery
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „I was most interested in the security issue. I paid a lot of attention to it before I made my decision. The solutions provided by LiveKid reassured me and were enough for me to make a positive decision and start working together.”
+      - img
+      - text: 2 child care facilities
+    - listitem:
+      - img "Women avatar"
+      - text: Monica Pinocchio Nonpublic Kindergarten
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „The big plus about LiveKid is that it approaches the customer beautifully. There is never a lack of culture, a nice voice on the phone, cordiality. There is always a willingness to act, to explain, to help.”
+      - img
+      - text: 2 child care facilities
+    - listitem:
+      - img "Women avatar"
+      - text: Marlene Nursery "Rudolf"
+      - img "Ocena 5 gwiazdek"
+      - paragraph: „The development and opportunities I have been given to use are impressive! Although I have to admit that the app met my needs right from the start.”
+      - img
+      - text: 42 children in facility
+  - navigation:
+    - list:
+      - listitem: "1"
+      - listitem: "2"
+      - listitem: "3"
+      - listitem: "4"
+      - listitem: "5"
+      - listitem: "6"
+      - listitem: "7"
+      - listitem: "8"
+      - listitem: "9"
+- contentinfo:
+  - heading "Information" [level=3]
+  - link "Privacy policy"
+  - link "Terms & Conditions"
+  - heading "Education" [level=3]
+  - link "Video tutorials"
+  - heading "About us" [level=3]
+  - link "Team"
+  - heading "Solutions" [level=3]
+  - link "Sign in"
+  - link "Create free account"
+  - img "Logo LiveKid"
+  - paragraph:
+    - text: The most effective system for pre-schools and nurseries in the EU. Communication with parents, settlements, documentation. All in one place! Interested in working together?
+    - link "+44 1789 337 346"
+  - link "Pobierz aplikację LiveKid z Google Play":
+    - img "Pobierz aplikację LiveKid z Google Play"
+  - link "Pobierz aplikację LiveKid z App Store":
+    - img "Pobierz aplikację LiveKid z App Store"
+  - link "facebook":
+    - img
+  - link "youtube":
+    - img
+  - link "instagram":
+    - img
+  - link "linkedin":
+    - img
+  - link "pinterest":
+    - img
+  - text: "LiveKid Sp. z o.o. ul. Energetyczna 6 lok. 7, 53-330 Wroclaw, Poland NIP: 6772427670 Quick contact:"
+  - link "hello@livekid.com"
+  - text: Customer service
+  - link "+44 1789 337 346"
+```
+
+# Test source
+
+```ts
+   1 | import { PageTitles } from '../../../src/enums/titles.enums';
+   2 | import { testUser1 } from '../../../src/test-data/user.data';
+   3 | import { HeaderComponent } from '../../../src/webui/components/header.component';
+   4 | import { BasePage } from '../../../src/webui/pages/base.page';
+   5 | import { SignInPage } from '../../../src/webui/pages/signIn.page';
+   6 | import { UserProfilePage } from '../../../src/webui/pages/userProfile.page';
+   7 | import { expect, test } from '@playwright/test';
+   8 | import * as allure from 'allure-js-commons';
+   9 |
+  10 | test.beforeEach(async ({ page }) => {
+  11 |   const basePage = new BasePage(page);
+  12 |   await basePage.goTo();
+  13 | });
+  14 |
+  15 | test('Sign in', { tag: '@signIn' }, async ({ page }) => {
+  16 |   await allure.feature('User Authentication');
+  17 |   await allure.story('Sign In process');
+  18 |   await allure.severity(allure.Severity.BLOCKER);
+  19 |   await allure.description('This test verifies the sign-in process and checks if the user lands on the profile page.');
+  20 |
+  21 |   const headerComponent = new HeaderComponent(page);
+  22 |
+  23 |   const [pageSignIn] = await Promise.all([
+  24 |     page.waitForEvent('popup'),
+  25 |     headerComponent.signInLink.click(),
+  26 |   ]);
+  27 |
+  28 |   const signInPage = new SignInPage(pageSignIn);
+  29 |   await signInPage.userSignIn();
+  30 |
+  31 |   const userProfilePage = new UserProfilePage(pageSignIn);
+  32 |
+> 33 |   expect(await userProfilePage.title()).toBe(PageTitles.BASIC_TITLE);
+     |                                         ^ Error: expect(received).toBe(expected) // Object.is equality
+  34 |   expect(userProfilePage.joinAsParentButtonIsVisible).toBeTruthy();
+  35 |
+  36 |   const screenshot = await pageSignIn.screenshot({ path: 'screenshots/signin.png', fullPage: true });
+  37 |   allure.attachment('SignIn Screenshot', screenshot, 'image/png');
+  38 | });
+  39 |
+```
