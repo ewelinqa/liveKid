@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1337","Check the Home Page title","chromium","Wed Mar 26 07:09:49 UTC 2025","passed","Wed Mar 26 07:09:50 UTC 2025","","smokeTests/checkTitles.spec.ts","",""
+"","1954","Check the Features Page title","chromium","Wed Mar 26 07:09:50 UTC 2025","passed","Wed Mar 26 07:09:52 UTC 2025","","smokeTests/checkTitles.spec.ts","",""
+"","1748","Check the Pricing Page title","chromium","Wed Mar 26 07:09:52 UTC 2025","passed","Wed Mar 26 07:09:54 UTC 2025","","smokeTests/checkTitles.spec.ts","",""
+"","1667","Check the Contact Page title","chromium","Wed Mar 26 07:09:54 UTC 2025","passed","Wed Mar 26 07:09:56 UTC 2025","","smokeTests/checkTitles.spec.ts","",""
+"","2206","Sign in","chromium","Wed Mar 26 07:09:56 UTC 2025","passed","Wed Mar 26 07:09:58 UTC 2025","","web/signInTests/signIn.spec.ts","",""
