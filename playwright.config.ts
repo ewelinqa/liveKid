@@ -64,34 +64,34 @@ export default defineConfig({
       },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: {
-    //     ...devices['Desktop Firefox'],
-    //     launchOptions: {
-    //       firefoxUserPrefs: {
-    //         'dom.events.asyncClipboard.readText': true,
-    //         'dom.events.testing.asyncClipboard': true,
-    //       },
-    //     },
-    //   },
-    // },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+        launchOptions: {
+          firefoxUserPrefs: {
+            'dom.events.asyncClipboard.readText': true,
+            'dom.events.testing.asyncClipboard': true,
+          },
+        },
+      },
+    },
 
-    // {
-    //   name: 'edge',
-    //   use: {
-    //     ...devices['Desktop Edge'],
-    //     contextOptions: {
-    //       // chromium-specific permissions
-    //       permissions: ['clipboard-read', 'clipboard-write'],
-    //     },
-    //   },
-    // },
+    {
+      name: 'edge',
+      use: {
+        ...devices['Desktop Edge'],
+        contextOptions: {
+          // chromium-specific permissions
+          permissions: ['clipboard-read', 'clipboard-write'],
+        },
+      },
+    },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
 
     /* Test against mobile viewports. */
     // {
