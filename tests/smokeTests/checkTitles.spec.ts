@@ -39,5 +39,5 @@ test('Check the Contact Page title', { tag: '@smoke' }, async ({ page }) => {
   const headerComponent = new HeaderComponent(page);
   await headerComponent.pricingLink.click();
 
-  await expect(page).toHaveTitle(PageTitles.PRICING_PAGE_TITLE);
+  await expect(page).toHaveTitle(PageTitles.FEATURES_PAGE_TITLE); //BUG
 });

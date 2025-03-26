@@ -13,7 +13,10 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Sign in', { tag: '@signIn' }, async ({ page }) => {
+  await allure.feature('User Authentication');
+  await allure.story('Sign In process');
   await allure.severity(allure.Severity.BLOCKER);
+  await allure.description('This test verifies the sign-in process and checks if the user lands on the profile page.');
 
   const headerComponent = new HeaderComponent(page);
 
@@ -29,4 +32,7 @@ test('Sign in', { tag: '@signIn' }, async ({ page }) => {
 
   expect(await userProfilePage.title()).toBe(PageTitles.BASIC_TITLE);
   expect(userProfilePage.joinAsParentButtonIsVisible).toBeTruthy();
+
+  const screenshot = await page.screenshot({ path: 'screenshots/signin.png', fullPage: true });
+  allure.attachment('SignIn Screenshot', screenshot, 'image/png');
 });
