@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
   await basePage.goTo();
 });
 
-test('Sign in', { tag: '@smoke' }, async ({ page }) => {
+test('Sign in', { tag: '@signIn' }, async ({ page }) => {
   await allure.severity(allure.Severity.BLOCKER);
 
   const headerComponent = new HeaderComponent(page);
