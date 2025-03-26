@@ -1,0 +1,189 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Check the Contact Page title
+- Location: /home/runner/work/liveKid/liveKid/tests/smokeTests/checkTitles.spec.ts:36:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
+
+Locator: locator(':root')
+Expected string: "Feature Overview - LiveKid"
+Received string: "Pricing - LiveKid"
+Call log:
+  - expect.toHaveTitle with timeout 5000ms
+  - waiting for locator(':root')
+    8 × locator resolved to <html lang="en-US" prefix="og: https://ogp.me/ns#">…</html>
+      - unexpected value "Pricing - LiveKid"
+
+    at /home/runner/work/liveKid/liveKid/tests/smokeTests/checkTitles.spec.ts:42:22
+```
+
+# Page snapshot
+
+```yaml
+- heading "Cookies" [level=1]
+- paragraph:
+  - text: We adapt the content to your individual needs using cookies. You can change the cookies using the settings of your web browser. By using our site without changing these settings, you accept their use.
+  - link "Cookie Policy"
+- button "Customize"
+- button "I Accept"
+- banner:
+  - link "Logo LiveKid":
+    - img "Logo LiveKid"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Pricing"
+      - listitem:
+        - link "Contact"
+  - link "Sign in"
+  - link "Create free account"
+  - link "EN"
+  - list:
+    - listitem:
+      - link "CA"
+    - listitem:
+      - link "CH"
+    - listitem:
+      - link "DE"
+    - listitem:
+      - link "ES"
+    - listitem:
+      - link "MX"
+    - listitem:
+      - link "PL"
+    - listitem:
+      - link "UK"
+- main:
+  - heading "Why is LiveKid cheaper than you think?" [level=1]
+  - img "Gabriela Fejkiel avatar"
+  - paragraph: The app saves me 30 hours a month on billing and meal orders is $10 an hour, my time is worth more!
+  - paragraph: Gabriella - director of the non-public kindergarten „The Garden of Talents”
+  - img "Aleksandra Mech Nowak avatar"
+  - paragraph: On ordering unnecessary meals I was losing over 200 $ per month. It wasn't until the app caught this, so it's a bit like earning it for me!
+  - paragraph: Alexandra - owner of the „Pyza i Ja”
+  - img "Dorota Ochał avatar"
+  - paragraph: Money and time is one thing... but peace of mind at the end of the day, everything tidied up, no phone calls at the oddest hours or FINALLY timely deposits - that's what I pay for :)
+  - paragraph: Dorothy - owner of nursery
+  - heading "No hidden charges!" [level=2]
+  - img
+  - heading "Full access to more than 40 functions" [level=3]
+  - img
+  - heading "Free and fast implementation of the application" [level=3]
+  - img
+  - heading "Dedicated account manager always available on the phone" [level=3]
+  - paragraph: $75 - $269 net per month per childcare centre
+  - paragraph: Package prices vary depending on the number of children in the centre. All additional things are already included in the price.
+  - link "Get a quote"
+  - link "Try it for free"
+  - heading "Features to help with day-to-day management" [level=2]
+  - img "Staff features"
+  - heading "Staff" [level=3]
+  - text: Plan staff schedules in your facility, create tasks to be completed and track progress on them.
+  - link "HR functions >"
+  - img "Administration features"
+  - heading "Administration" [level=3]
+  - text: Generate necessary reports and settle bills with one click, and parents can easily pay them through the app.
+  - link "Administrative functions >"
+  - img "Communication features"
+  - heading "Communication" [level=3]
+  - text: Send parents individual or group notifications and messages, create announcements and check who has read them!
+  - link "Communication functions >"
+  - img "Group management features"
+  - heading "Group Management" [level=3]
+  - text: Check information and daily plan in the daily and calendar diary. Control sleep, meals and attendance, among other things.
+  - link "Management functions >"
+- contentinfo:
+  - heading "Information" [level=3]
+  - link "Privacy policy"
+  - link "Terms & Conditions"
+  - heading "Education" [level=3]
+  - link "Video tutorials"
+  - heading "About us" [level=3]
+  - link "Team"
+  - heading "Solutions" [level=3]
+  - link "Sign in"
+  - link "Create free account"
+  - img "Logo LiveKid"
+  - paragraph:
+    - text: The most effective system for pre-schools and nurseries in the EU. Communication with parents, settlements, documentation. All in one place! Interested in working together?
+    - link "+44 1789 337 346"
+  - link "Pobierz aplikację LiveKid z Google Play":
+    - img "Pobierz aplikację LiveKid z Google Play"
+  - link "Pobierz aplikację LiveKid z App Store":
+    - img "Pobierz aplikację LiveKid z App Store"
+  - link "facebook":
+    - img
+  - link "youtube":
+    - img
+  - link "instagram":
+    - img
+  - link "linkedin":
+    - img
+  - link "pinterest":
+    - img
+  - text: "LiveKid Sp. z o.o. ul. Energetyczna 6 lok. 7, 53-330 Wroclaw, Poland NIP: 6772427670 Quick contact:"
+  - link "hello@livekid.com"
+  - text: Customer service
+  - link "+44 1789 337 346"
+```
+
+# Test source
+
+```ts
+   1 | import { PageTitles } from '../../src/enums/titles.enums';
+   2 | import { HeaderComponent } from '../../src/webui/components/header.component';
+   3 | import { BasePage } from '../../src/webui/pages/base.page';
+   4 | import { expect, test } from '@playwright/test';
+   5 | import * as allure from 'allure-js-commons';
+   6 |
+   7 | test.beforeEach(async ({ page }) => {
+   8 |   const basePage = new BasePage(page);
+   9 |   await basePage.goTo();
+  10 | });
+  11 |
+  12 | test('Check the Home Page title', { tag: '@smoke' }, async ({ page }) => {
+  13 |   await allure.severity(allure.Severity.BLOCKER);
+  14 |
+  15 |   await expect(page).toHaveTitle(PageTitles.BASIC_TITLE);
+  16 | });
+  17 |
+  18 | test('Check the Features Page title', { tag: '@smoke' }, async ({ page }) => {
+  19 |   await allure.severity(allure.Severity.BLOCKER);
+  20 |
+  21 |   const headerComponent = new HeaderComponent(page);
+  22 |   await headerComponent.contactLink.click();
+  23 |
+  24 |   await expect(page).toHaveTitle(PageTitles.CONTACT_PAGE_TITLE);
+  25 | });
+  26 |
+  27 | test('Check the Pricing Page title', { tag: '@smoke' }, async ({ page }) => {
+  28 |   await allure.severity(allure.Severity.BLOCKER);
+  29 |
+  30 |   const headerComponent = new HeaderComponent(page);
+  31 |   await headerComponent.featuresLink.click();
+  32 |
+  33 |   await expect(page).toHaveTitle(PageTitles.FEATURES_PAGE_TITLE);
+  34 | });
+  35 |
+  36 | test('Check the Contact Page title', { tag: '@smoke' }, async ({ page }) => {
+  37 |   await allure.severity(allure.Severity.BLOCKER);
+  38 |
+  39 |   const headerComponent = new HeaderComponent(page);
+  40 |   await headerComponent.pricingLink.click();
+  41 |
+> 42 |   await expect(page).toHaveTitle(PageTitles.FEATURES_PAGE_TITLE); //BUG
+     |                      ^ Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)
+  43 | });
+  44 |
+```
