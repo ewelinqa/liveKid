@@ -33,6 +33,6 @@ test('Sign in', { tag: '@signIn' }, async ({ page }) => {
   expect(await userProfilePage.title()).toBe(PageTitles.BASIC_TITLE);
   expect(userProfilePage.joinAsParentButtonIsVisible).toBeTruthy();
 
-  const screenshot = await page.screenshot({ path: 'screenshots/signin.png', fullPage: true });
+  const screenshot = await pageSignIn.screenshot({ path: 'screenshots/signin.png', fullPage: true });
   allure.attachment('SignIn Screenshot', screenshot, 'image/png');
 });
